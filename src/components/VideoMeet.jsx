@@ -41,7 +41,7 @@ const Item = styled(Paper)(({ theme }) => ({
   }),
 }));
 
-const SERVER_URL = "https://backend-4ih30fhry-jayanta111s-projects.vercel.app";
+const SERVER_URL = "https://backendweb-2.onrender.com";
 const PEER_CONFIG = {
   iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
 };

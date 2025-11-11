@@ -2,11 +2,11 @@ import { createContext, useContext, useState } from "react";
 import axios from "axios";
 import httpStatus from "http-status";
 import { useNavigate } from "react-router-dom";
-
+import baseURL from '../environment'
 export const AuthContext = createContext({});
 
 const client = axios.create({
-  baseURL: "https://backend-4ih30fhry-jayanta111s-projects.vercel.app/api/v1/users",
+  baseURL,
 });
 
 export const AuthProvider = ({ children }) => {
