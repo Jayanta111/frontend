@@ -1,0 +1,24 @@
+{
+  "name": "Vionex",
+  "short_name": "Vionex",
+  "icons": [
+    {
+      "src": "vionex_favicon_32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "vionex_favicon_64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "vionex_favicon_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#00C2FF",
+  "background_color": "#6B5CFF",
+  "display": "standalone"
+}
