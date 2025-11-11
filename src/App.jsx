@@ -1,20 +1,19 @@
 // src/App.js
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home/Home";
 import LandingPage from "./components/landingPage";
 import "./App.css";
 import SignIn from "./Auth/authentication";
 import { AuthProvider } from "./constants/AuthContext";
 import VideoMeet from "./components/VideoMeet";
-import withAuth from "./constants/withAuth"; // 👈 import your auth guard
+import withAuth from "./constants/withAuth";
 
-// Wrap protected routes
 const ProtectedHome = withAuth(Home);
 const ProtectedVideoMeet = withAuth(VideoMeet);
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AuthProvider>
         <Routes>
           {/* Public routes */}
@@ -26,7 +25,7 @@ function App() {
           <Route path="/:url" element={<ProtectedVideoMeet />} />
         </Routes>
       </AuthProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
