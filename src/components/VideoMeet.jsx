@@ -27,7 +27,7 @@ import StopScreenShareIcon from "@mui/icons-material/StopScreenShare";
 import CallEndIcon from "@mui/icons-material/CallEnd";
 import ChatIcon from "@mui/icons-material/Chat";
 import CloseIcon from "@mui/icons-material/Close";
-              import ShareIcon from '@mui/icons-material/Share';
+import ShareIcon from "@mui/icons-material/Share";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#fff",
@@ -41,34 +41,34 @@ const Item = styled(Paper)(({ theme }) => ({
   }),
 }));
 
-const SERVER_URL = "http://localhost:3030";
+const SERVER_URL = "https://backend-4ih30fhry-jayanta111s-projects.vercel.app";
 const PEER_CONFIG = {
   iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
 };
-  const handleShare = async () => {
-    const shareData = {
-      title: document.title,
-      text: "Check out this meeting link:",
-      url: window.location.href, // current page URL
-    };
-
-    if (navigator.share) {
-      try {
-        await navigator.share(shareData);
-        console.log("Link shared successfully");
-      } catch (err) {
-        console.error("Error sharing:", err);
-      }
-    } else {
-      // fallback: copy to clipboard
-      try {
-        await navigator.clipboard.writeText(window.location.href);
-        alert("Link copied to clipboard!");
-      } catch (err) {
-        console.error("Failed to copy:", err);
-      }
-    }
+const handleShare = async () => {
+  const shareData = {
+    title: document.title,
+    text: "Check out this meeting link:",
+    url: window.location.href, // current page URL
   };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+      console.log("Link shared successfully");
+    } catch (err) {
+      console.error("Error sharing:", err);
+    }
+  } else {
+    // fallback: copy to clipboard
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      alert("Link copied to clipboard!");
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  }
+};
 
 export default function VideoMeet() {
   const socketRef = useRef();
@@ -562,7 +562,7 @@ export default function VideoMeet() {
                   <VideocamOffIcon sx={{ color: "red" }} />
                 )}
               </IconButton>
-                <IconButton onClick={handleShare} color="primary">
+              <IconButton onClick={handleShare} color="primary">
                 <ShareIcon sx={{ color: "red" }} />
               </IconButton>
 
