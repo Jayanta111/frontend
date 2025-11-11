@@ -9,22 +9,20 @@ export default function CallToAction() {
   const handleJoinMeeting = () => {
     if (meetingInput.trim() !== "") {
       // Check if it's a full URL
-      const url = meetingInput.startsWith("http://") || meetingInput.startsWith("https://")
-        ? meetingInput
-        : `/${meetingInput}`;
+      const url =
+        meetingInput.startsWith("http://") || meetingInput.startsWith("https://")
+          ? meetingInput
+          : `/${meetingInput}`;
       window.location.href = url; // redirect to full URL or local route
     } else {
       alert("Please enter a meeting ID or link to join");
     }
   };
 
-  // Host Meeting → redirect to a host page or generate meeting
+  // Host Meeting → generate random meeting ID
   const handleHostMeeting = () => {
-    // Example: redirect to /host page
-    navigate("/host"); 
-    // Or if you want to generate a random meeting ID:
-    // const newMeetingId = Math.floor(100000 + Math.random() * 900000);
-    // navigate(`/${newMeetingId}`);
+    const newMeetingId = Math.floor(100000 + Math.random() * 900000); // 6-digit ID
+    navigate(`/${newMeetingId}`);
   };
 
   return (
