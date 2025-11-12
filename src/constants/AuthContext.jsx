@@ -20,14 +20,14 @@ export const AuthProvider = ({ children }) => {
         password: password,
       });
       if (request.status === httpStatus.CREATED) {
+        router("/home");
         return request.data.message;
-        
       }
     } catch (err) {
       throw err;
     }
   };
-  
+
   const handleLogin = async (username, password) => {
     try {
       let request = await client.post("/login", {
@@ -51,4 +51,3 @@ export const AuthProvider = ({ children }) => {
   };
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 };
-
