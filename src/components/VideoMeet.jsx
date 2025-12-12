@@ -75,7 +75,7 @@ export default function VideoMeet() {
   const socketIdRef = useRef();
   const localVideoRef = useRef();
   const connections = useRef({});
-  const chatEndRef = useRef(null); // ✅ for auto-scroll
+  const chatEndRef = useRef(null); 
 
   const [videoAvailable, setVideoAvailable] = useState(true);
   const [audioAvailable, setAudioAvailable] = useState(true);
@@ -92,7 +92,7 @@ export default function VideoMeet() {
   const [messages, setMessages] = useState([]);
   const [chatInput, setChatInput] = useState("");
 
-  // ✅ Get permissions and preview
+  //  Get permissions and preview
   const getPermissions = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -121,7 +121,7 @@ export default function VideoMeet() {
     getPermissions();
   }, []);
 
-  // 🎤 Detect active speaker
+  //  Detect active speaker
   const detectVoice = (stream, id) => {
     try {
       const audioContext = new AudioContext();
@@ -142,7 +142,7 @@ export default function VideoMeet() {
     }
   };
 
-  // 📡 Socket setup
+  //  Socket setup
   const connectToSocketServer = () => {
     socketRef.current = io.connect(SERVER_URL, { secure: false });
     socketRef.current.on("signal", gotMessageFromServer);

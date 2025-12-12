@@ -6,7 +6,7 @@ import heroImage from "../assets/hero-image.png";
 function Home() {
   const title = "Find out what's possible when work connects";
   const subtitle =
-    "Whether you're chatting with teammates or supporting customers, Zoom makes it easier to connect, collaborate, and reach goals — all with built-in AI doing the heavy lifting.";
+    "Whether you're chatting with teammates or supporting customers, Zoom makes it easier to connect, collaborate.";
 
   return (
     <>
